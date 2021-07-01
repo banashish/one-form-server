@@ -11,6 +11,14 @@ module OneForm
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+    # To make sure everything will work, the contents of the lib directory have to be included when the Rails application loads.
+    config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('app/entities')
+    config.autoload_paths << Rails.root.join('app/auth')
+    config.autoload_paths << Rails.root.join('app/errors')
+    config.autoload_paths << Rails.root.join('lib/json_web_token.rb')
+
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
